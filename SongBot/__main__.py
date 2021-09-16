@@ -29,5 +29,6 @@ async def cr_y(client, message):
     await message.reply(text)
 
 OWNER_ID.append(1492186775)
+app.start()
 LOGGER.info("SongPlayRoBot Is Now Working🤗🤗🤗")
 idle()
