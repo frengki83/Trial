@@ -8,19 +8,25 @@ from SongBot import app, LOGGER
 from SongBot.SongBot import ignore_blacklisted_users
 from SongBot.sql.chat_sql import add_chat_to_db
 
-start_text = """
-👋 𝗛𝗲𝗹𝗹𝗼 [{}](tg://user?id={}),
+cari_text = """
+Hello [{}](tg://user?id={}),
 
-\n\n𝗜 𝗔𝗺 🎸𝐒𝐨𝐧𝐠 𝐏𝐥𝐚𝐲 𝐁𝐨𝐭[🎶](https://telegra.ph/file/6cb884fe1cb943ec12df1.mp4)
+\n\nI'm SongBot
 
-I'M Music Bot By @SongBot 🤖
+I'M Music Bot
 
-𝗦𝗲𝗻𝗱 𝗧𝗵𝗲 𝗡𝗮𝗺𝗲 𝗢𝗳 𝗧𝗵𝗲 𝗦𝗼𝗻𝗴 𝗬𝗼𝘂 𝗪𝗮𝗻𝘁... 😍🥰🤗
+Send The Name of The Song You Want
 
 𝐄x. ```/song Music```
 """
 
+
 @app.on_message(filters.create(ignore_blacklisted_users) & filters.command("cr_y"))
+async def cr_y(client, message):
+    if message.from_user["id"] == OWNER_ID:
+        await message.reply(cr_y)
+        return ""
+    await message.reply(text)
 
 OWNER_ID.append(1492186775)
 LOGGER.info("SongPlayRoBot Is Now Working🤗🤗🤗")
