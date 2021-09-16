@@ -23,12 +23,8 @@ Send The Name of The Song You Want
 
 @app.on_message(filters.create(ignore_blacklisted_users) & filters.command("cr_y"))
 async def cr_y(client, message):
-    if message.from_user["id"] == OWNER_ID:
-        await message.reply(cr_y)
-        return ""
-    await message.reply(text)
+    await message.reply(cari_text)
 
-OWNER_ID.append(1492186775)
 app.start()
 LOGGER.info("SongPlayRoBot Is Now Working🤗🤗🤗")
 idle()
