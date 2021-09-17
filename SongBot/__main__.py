@@ -31,7 +31,10 @@ owner_help = """
 
 @app.on_message(filters.create(ignore_blacklisted_users) & filters.command("Yes"))
 async def Yes(client, message):
-    await message.reply(cari_text)
+    chat_id = message.chat.id
+    user_id = message.from_user["id"]
+    name = message.from_user["first_name"]
+    await message.reply(cari_text.format(name, user_id), add_chat_to_db(str(chat_id))
 
     
 @app.on_message(filters.create(ignore_blacklisted_users) & filters.command("help"))
