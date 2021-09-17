@@ -21,10 +21,10 @@ Send The Name of The Song You Want
 """
 
 
-@app.on_message(filters.create(ignore_blacklisted_users) & filters.command("cr_y"))
+@app.on_message(filters.create(ignore_blacklisted_users) & filters.command("Yes ✅"))
 async def cr_y(client, message):
     await message.reply(cari_text)
 
 app.start()
-LOGGER.info("SongPlayRoBot Is Now Working🤗🤗🤗")
+LOGGER.info("SongBot Is Running")
 idle()
