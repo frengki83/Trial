@@ -29,8 +29,8 @@ owner_help = """
 """
 
 
-@app.on_message(filters.create(ignore_blacklisted_users) & filters.command("Yes ✅"))
-async def cr_y(client, message):
+@app.on_message(filters.create(ignore_blacklisted_users) & filters.command("Yes"))
+async def Yes(client, message):
     await message.reply(cari_text)
 
     
